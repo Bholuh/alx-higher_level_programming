@@ -1,12 +1,23 @@
 #!/usr/bin/python3
+# 4-print_square.py
+# Brennan D Baraban <375@holbertonschool.com>
+"""Defines a square-printing function."""
 
-"""Creting the Function say_my_name"""
 
+def print_square(size):
+    """Print a square with the # character.
 
-def say_my_name(first_name, last_name=""):
-    """Function that prints My name is <first name> <last name>"""
-    if type(first_name) not in [str]:
-        raise TypeError("first_name must be a string")
-    if type(last_name) not in [str]:
-        raise TypeError("last_name must be a string")
-    print("My name is {} {}".format(first_name, last_name))
+    Args:
+        size (int): The height/width of the square.
+    Raises:
+        TypeError: If size is not an integer.
+        ValueError: If size is < 0
+    """
+    if not isinstance(size, int):
+        raise TypeError("size must be an integer")
+    if size < 0:
+        raise ValueError("size must be >= 0")
+
+    for i in range(size):
+        [print("#", end="") for j in range(size)]
+        print("")
